@@ -11,6 +11,6 @@ export interface Action {
 
 export interface File {
   name: string;
-  icon: string;
+  icon: StaticImageData;
   path: string;
 }

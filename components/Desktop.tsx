@@ -1,8 +1,9 @@
 import React from "react";
-import {Image, Text, Grid, Stack, LinkBox, LinkOverlay} from "@chakra-ui/react";
+import {Text, Grid, Stack, LinkBox, LinkOverlay} from "@chakra-ui/react";
 import Link from "next/link";
 
 import {File} from "../types";
+import FixedImage from "../ui/FixedImage";
 
 interface Props {
   files: File[];
@@ -28,7 +29,16 @@ const Desktop: React.FC<Props> = ({files}) => {
             userSelect="none"
             width="100%"
           >
-            <Image alt={file.icon} margin="auto" maxWidth="64px" src={file.icon} />
+            <FixedImage
+              alt={file.name}
+              blurDataURL={file.icon.blurDataURL}
+              height={64}
+              margin="auto"
+              maxWidth="64px"
+              placeholder="blur"
+              src={file.icon.src}
+              width={64}
+            />
             <Text
               borderRadius="sm"
               className="focuser"
