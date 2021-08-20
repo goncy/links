@@ -1,6 +1,7 @@
 import React from "react";
-import {Stack, Box, Text} from "@chakra-ui/react";
+import {Stack, Box, Text, Link} from "@chakra-ui/react";
 import {motion} from "framer-motion";
+import NextLink from "next/link";
 
 interface Props {
   title: string;
@@ -60,14 +61,18 @@ const Window: React.FC<Props> = ({dragConstraints, title, children}) => {
             onPointerUp={handleDragHandleUp}
           >
             <Stack alignItems="center" direction="row" position="absolute">
-              <Box
-                backgroundColor="red.500"
-                borderRadius={9999}
-                cursor="pointer"
-                height={3}
-                tabIndex={0}
-                width={3}
-              />
+              <NextLink passHref href="/">
+                <Link>
+                  <Box
+                    backgroundColor="red.500"
+                    borderRadius={9999}
+                    cursor="pointer"
+                    height={3}
+                    tabIndex={0}
+                    width={3}
+                  />
+                </Link>
+              </NextLink>
               <Box
                 backgroundColor="yellow.500"
                 borderRadius={9999}
