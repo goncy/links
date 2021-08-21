@@ -4,7 +4,7 @@ import {Box} from "@chakra-ui/react";
 
 import {Action, PageProps} from "../../types";
 import {parse} from "../../utils/mdx";
-import {getFiles} from "../../utils/file";
+import {getContentFiles} from "../../utils/file";
 
 interface Props extends PageProps {
   content: MDXRemoteSerializeResult;
@@ -20,7 +20,7 @@ const ChromePage: NextPage<Props> = ({content}) => {
 };
 
 export const getStaticProps: GetStaticProps<Props, any> = async ({params: {file}}) => {
-  const {content, frontmatter} = await parse("chrome", file);
+  const {content, frontmatter} = await parse("chrome", `/${file}/index.mdx`);
 
   return {
     props: {
@@ -34,12 +34,12 @@ export const getStaticProps: GetStaticProps<Props, any> = async ({params: {file}
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const files = getFiles("chrome");
+  const files = getContentFiles("chrome");
 
   return {
     paths: files.map((file) => ({
       params: {
-        file: `/content/chrome/${file}/index.mdx`,
+        file,
       },
     })),
     fallback: "blocking",

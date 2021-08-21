@@ -4,7 +4,7 @@ import React from "react";
 
 import Icon from "../../components/Icon";
 import {File, PageProps} from "../../types";
-import {getFiles} from "../../utils/file";
+import {getContentFiles} from "../../utils/file";
 
 interface Props extends PageProps {
   files: File[];
@@ -34,7 +34,7 @@ export const getStaticProps: GetStaticProps<Props, any> = async ({params: {file}
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const files = getFiles("finder");
+  const files = getContentFiles("finder");
 
   return {
     paths: files.map((file) => ({
