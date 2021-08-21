@@ -21,7 +21,7 @@ const FinderPage: NextPage<Props> = ({files}) => {
 };
 
 export const getStaticProps: GetStaticProps<Props, any> = async ({params: {file}}) => {
-  const files = await import(`../../content/finder/${file}.ts`).then((res) => res.default);
+  const files = await import(`../../content/finder/${file}`).then((res) => res.default);
 
   return {
     props: {
