@@ -12,6 +12,7 @@ const FixedImage = chakra(Image, {
       "aria-label",
       "alt",
       "onLoadingComplete",
+      "onClick",
       "placeholder",
     ].includes(prop),
 });

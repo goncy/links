@@ -17,7 +17,3 @@ export async function parse(
 
   return {content: mdxContent, frontmatter: data};
 }
-
-export function getFiles(folder: string) {
-  return fs.readdirSync(path.join(process.cwd(), "content", folder));
-}

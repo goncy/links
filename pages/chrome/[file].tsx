@@ -1,11 +1,10 @@
-import fs from "fs";
-
 import type {GetStaticPaths, GetStaticProps, NextPage} from "next";
 import {MDXRemote, MDXRemoteSerializeResult} from "next-mdx-remote";
 import {Box} from "@chakra-ui/react";
 
 import {Action, PageProps} from "../../types";
-import {getFiles, parse} from "../../utils/mdx";
+import {parse} from "../../utils/mdx";
+import {getFiles} from "../../utils/file";
 
 interface Props extends PageProps {
   content: MDXRemoteSerializeResult;
@@ -40,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: files.map((file) => ({
       params: {
-        file,
+        file: `/content/chrome/${file}/index.mdx`,
       },
     })),
     fallback: "blocking",

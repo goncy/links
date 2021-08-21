@@ -1,10 +1,11 @@
 import React from "react";
-import {Image, Text, Stack, Link, Box} from "@chakra-ui/react";
+import {Text, Stack, Link, Box} from "@chakra-ui/react";
 import NextLink from "next/link";
 
-import screenNormal from "../public/assets/icons/screen-normal.svg";
-import screenFull from "../public/assets/icons/screen-full.svg";
-import apple from "../public/assets/icons/apple.svg";
+import Image from "../ui/FixedImage";
+import screenNormal from "../public/assets/icons/screen-normal.png";
+import screenFull from "../public/assets/icons/screen-full.png";
+import apple from "../public/assets/icons/apple.png";
 import {Action} from "../types";
 
 interface Props {
@@ -29,7 +30,7 @@ const Navbar: React.FC<Props> = ({app, actions}) => {
 
   return (
     <Box backgroundColor="rgba(0,0,0,0.75)" boxShadow="md" paddingX={4}>
-      <Stack direction="row" justifyContent="space-between">
+      <Stack alignItems="center" direction="row" justifyContent="space-between">
         <Stack
           alignItems="center"
           direction="row"
@@ -38,7 +39,7 @@ const Navbar: React.FC<Props> = ({app, actions}) => {
           overflowX="auto"
           spacing={6}
         >
-          <Image alt="Apple logo" src={apple.src} />
+          <Image alt="Apple logo" height={20} layout="fixed" src={apple.src} width={20} />
           {app && (
             <>
               <Text fontSize="sm" fontWeight="bold" userSelect="none">
@@ -60,16 +61,22 @@ const Navbar: React.FC<Props> = ({app, actions}) => {
               <Image
                 alt="exit full screen"
                 cursor="pointer"
+                height={20}
+                layout="fixed"
                 src={screenNormal.src}
                 tabIndex={0}
+                width={20}
                 onClick={() => handleToggleFullScreen(false)}
               />
             ) : (
               <Image
                 alt="enter full screen"
                 cursor="pointer"
+                height={20}
+                layout="fixed"
                 src={screenFull.src}
                 tabIndex={0}
+                width={20}
                 onClick={() => handleToggleFullScreen(true)}
               />
             )}
