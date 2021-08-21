@@ -19,6 +19,10 @@ function App({Component, pageProps}: AppProps) {
     <>
       <Head>
         <title>Gonzalo Pozzo | Blog</title>
+        <meta
+          content="Blog opinionado de Gonzalo Pozzo, principalmente enfocado en React, frontend y otras tecnologías que me gustan"
+          name="description"
+        />
       </Head>
       <ChakraProvider theme={theme}>
         <Stack height="100%" position="relative" spacing={0}>

@@ -11,7 +11,12 @@ interface Props {
 
 const Desktop: React.FC<Props> = ({files}) => {
   return (
-    <Grid gap={1} gridTemplateColumns="repeat(auto-fill, minmax(108px, 1fr))" padding={4}>
+    <Grid
+      as="header"
+      gap={1}
+      gridTemplateColumns="repeat(auto-fill, minmax(108px, 1fr))"
+      padding={4}
+    >
       {files.map((file) => (
         <Icon key={file.path} file={file} />
       ))}
