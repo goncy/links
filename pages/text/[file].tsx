@@ -11,7 +11,7 @@ interface Props extends PageProps {
   frontmatter: Record<string, any>;
 }
 
-const ChromePage: NextPage<Props> = ({content}) => {
+const TextPage: NextPage<Props> = ({content}) => {
   return (
     <Box padding={2}>
       <MDXRemote {...content} />
@@ -20,12 +20,12 @@ const ChromePage: NextPage<Props> = ({content}) => {
 };
 
 export const getStaticProps: GetStaticProps<Props, any> = async ({params: {file}}) => {
-  const {content, frontmatter} = await parse("chrome", `/${file}/index.mdx`);
+  const {content, frontmatter} = await parse("text", `/${file}/index.mdx`);
 
   return {
     props: {
-      app: "Chrome",
-      title: `Chrome - ${frontmatter.title}`,
+      app: "TextEdit",
+      title: `TextEdit - ${frontmatter.title}`,
       actions: frontmatter.links.map(([label, url]: [string, string]): Action => ({label, url})),
       content,
       frontmatter,
@@ -34,7 +34,7 @@ export const getStaticProps: GetStaticProps<Props, any> = async ({params: {file}
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const files = getContentFiles("chrome");
+  const files = getContentFiles("text");
 
   return {
     paths: files.map((file) => ({
@@ -46,4 +46,4 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export default ChromePage;
+export default TextPage;

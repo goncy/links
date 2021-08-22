@@ -1,8 +1,7 @@
-import {Grid} from "@chakra-ui/react";
 import type {GetStaticPaths, GetStaticProps, NextPage} from "next";
 import React from "react";
 
-import Icon from "../../components/Icon";
+import Files from "../../components/Files";
 import {File, PageProps} from "../../types";
 import {getContentFiles} from "../../utils/file";
 
@@ -11,13 +10,7 @@ interface Props extends PageProps {
 }
 
 const FinderPage: NextPage<Props> = ({files}) => {
-  return (
-    <Grid gap={1} gridTemplateColumns="repeat(auto-fill, minmax(108px, 1fr))" padding={4}>
-      {files.map((file) => (
-        <Icon key={file.path} file={file} />
-      ))}
-    </Grid>
-  );
+  return <Files files={files} padding={4} />;
 };
 
 export const getStaticProps: GetStaticProps<Props, any> = async ({params: {file}}) => {
@@ -27,7 +20,6 @@ export const getStaticProps: GetStaticProps<Props, any> = async ({params: {file}
     props: {
       app: "Finder",
       title: `Finder - ${file}`,
-      actions: [],
       files,
     },
   };

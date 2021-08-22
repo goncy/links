@@ -2,7 +2,7 @@ import React from "react";
 import {Text, Stack, Link, Box} from "@chakra-ui/react";
 import NextLink from "next/link";
 
-import Image from "../ui/FixedImage";
+import Image from "../ui/display/FixedImage";
 import screenNormal from "../public/assets/icons/screen-normal.png";
 import screenFull from "../public/assets/icons/screen-full.png";
 import apple from "../public/assets/icons/apple.png";

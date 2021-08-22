@@ -3,7 +3,7 @@ import {LinkBox, Stack, LinkOverlay, Text} from "@chakra-ui/react";
 import Link from "next/link";
 
 import {File} from "../types";
-import FixedImage from "../ui/FixedImage";
+import FixedImage from "../ui/display/FixedImage";
 
 interface Props {
   file: File;
@@ -16,6 +16,7 @@ function Icon({file}: Props): JSX.Element {
         alignItems="center"
         borderRadius="sm"
         cursor="pointer"
+        filter="drop-shadow(0px 0px 6px rgba(0,0,0,0.25))"
         padding={1}
         spacing={2}
         sx={{

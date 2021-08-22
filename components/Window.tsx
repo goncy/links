@@ -31,7 +31,7 @@ const Window: React.FC<Props> = ({dragConstraints, title, children}) => {
   }
 
   return (
-    <Box maxWidth={{base: "90vw", md: 640}}>
+    <Box height="1px" position="fixed" width="1px">
       <motion.div
         animate={{scale: 1}}
         drag={canDrag}
@@ -40,7 +40,7 @@ const Window: React.FC<Props> = ({dragConstraints, title, children}) => {
         dragMomentum={false}
         exit={{scale: 0}}
         initial={{scale: 0}}
-        style={{width: "100%"}}
+        style={{width: "90vw", maxWidth: 640}}
       >
         <Stack
           backgroundColor="gray.700"

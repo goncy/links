@@ -9,7 +9,7 @@ class Document extends NextDocument {
 
   render() {
     return (
-      <Html lang="es">
+      <Html lang="en">
         <Head />
         <body>
           <Main />
