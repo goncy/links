@@ -5,6 +5,7 @@ import youtubeIcon from "./public/assets/icons/youtube.png";
 import discordIcon from "./public/assets/icons/discord.png";
 import folderIcon from "./public/assets/icons/folder.png";
 import txtIcon from "./public/assets/icons/txt.png";
+import chromeIcon from "./public/assets/icons/chrome.png";
 
 export const DESKTOP_FILES: File[] = [
   {
@@ -16,6 +17,11 @@ export const DESKTOP_FILES: File[] = [
     icon: folderIcon,
     name: "My tweets",
     path: "/finder/tweets",
+  },
+  {
+    icon: chromeIcon,
+    name: "My CV",
+    path: "https://cv.gonzalopozzo.com",
   },
   {
     icon: txtIcon,
