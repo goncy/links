@@ -8,6 +8,16 @@ import txtIcon from "./public/assets/icons/txt.png";
 
 export const DESKTOP_FILES: File[] = [
   {
+    icon: folderIcon,
+    name: "React resources",
+    path: "/finder/react-resources",
+  },
+  {
+    icon: txtIcon,
+    name: "About this",
+    path: "/text/about-this",
+  },
+  {
     icon: twitterIcon,
     name: "Twitter",
     path: "https://twitter.gonzalopozzo.com",
@@ -26,15 +36,5 @@ export const DESKTOP_FILES: File[] = [
     icon: discordIcon,
     name: "Discord",
     path: "https://discord.gonzalopozzo.com",
-  },
-  {
-    icon: folderIcon,
-    name: "React resources",
-    path: "/finder/react-resources",
-  },
-  {
-    icon: txtIcon,
-    name: "About this",
-    path: "/text/about-this",
   },
 ];

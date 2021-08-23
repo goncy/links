@@ -17,9 +17,9 @@ function App({Component, pageProps}: AppProps) {
   return (
     <>
       <Head>
-        <title>Gonzalo Pozzo | Blog</title>
+        <title>Gonzalo Pozzo | Links</title>
         <meta
-          content="Blog opinionado de Gonzalo Pozzo, principalmente enfocado en React, frontend y otras tecnologías que me gustan"
+          content="Links útiles de Gonzalo Pozzo, principalmente enfocado en React, frontend y otras tecnologías que me gustan"
           name="description"
         />
       </Head>
