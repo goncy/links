@@ -13,6 +13,11 @@ export const DESKTOP_FILES: File[] = [
     path: "/finder/react-resources",
   },
   {
+    icon: folderIcon,
+    name: "My tweets",
+    path: "/finder/tweets",
+  },
+  {
     icon: txtIcon,
     name: "About this",
     path: "/text/about-this",
