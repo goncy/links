@@ -10,7 +10,7 @@ const files: File[] = [
   {
     icon: chromeIcon,
     name: "React 2025",
-    path: "https://egghead.io/courses/the-beginner-s-guide-to-react",
+    path: "https://react2025.com",
   },
   {
     icon: chromeIcon,
